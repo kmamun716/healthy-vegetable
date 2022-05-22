@@ -6,6 +6,7 @@ import Vegitable from '../Vegitable/Vegitable';
 
 const Vegitables = () => {
     const [vegs, setVegs] = useState([]);
+    const [cart, setCart] = useState();
     useEffect(()=>{        
         setVegs(vegitables)
     },[]);
