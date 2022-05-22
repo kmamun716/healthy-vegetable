@@ -11,11 +11,15 @@ const Vegitables = () => {
         setVegs(vegitables)
     },[]);
     const handleClick=(selectedItem)=>{
-        const duplicate = cart && cart.find(item=>item.id===selectedItem.id);
-        if(!duplicate){
-            setCart([...cart, selectedItem]);            
-        } else {   
-            alert("there have duplicate item")         
+        if(cart.length>=4){
+            alert("do not able to add more item") 
+        }else{
+            const duplicate = cart && cart.find(item=>item.id===selectedItem.id);
+            if(!duplicate){
+                setCart([...cart, selectedItem]);            
+            } else {   
+                alert("this item alreade added")         
+            }
         }
     };
     const handleRemoveItem=id=>{
@@ -40,7 +44,7 @@ const Vegitables = () => {
                         <h4 >Selected Items:</h4>
                         <ul>
                             {
-                              cart && cart.map(item=><ItemDetails item={item} key={item.id} handleRemoveItem={handleRemoveItem} />)
+                              cart ? cart.map(item=><ItemDetails item={item} key={item.id} handleRemoveItem={handleRemoveItem} />): <p>Please Selcet Some Item</p>
                             }
                         </ul>
                         {
