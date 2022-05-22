@@ -44,7 +44,7 @@ const Vegitables = () => {
                         <h4 >Selected Items:</h4>
                         <ul>
                             {
-                              cart ? cart.map(item=><ItemDetails item={item} key={item.id} handleRemoveItem={handleRemoveItem} />): <p>Please Selcet Some Item</p>
+                              cart.length ? cart.map(item=><ItemDetails item={item} key={item.id} handleRemoveItem={handleRemoveItem} />): <p className='text-danger'>Please Selcet Some Item</p>
                             }
                         </ul>
                         {
