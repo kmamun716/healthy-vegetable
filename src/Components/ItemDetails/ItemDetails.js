@@ -1,12 +1,15 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
-const ItemDetails = () => {
+const ItemDetails = ({item, handleRemoveItem}) => {
+    const {photo, name, id} = item;
     return (
-        <div className='sticky-top d-flex justify-content-center'>
-            <div>
-                <h5>Cart Items Details:</h5>
-            </div>
-        </div>
+        <li className='d-block'>
+            <img src={photo} alt={name} width="70px" className='img-fluid img-thumbnail rounded-circle' />
+            <span className='px-2'>{name}</span>
+            <FontAwesomeIcon onClick={()=>handleRemoveItem(id)} icon={faTrashCan} />
+        </li>
     );
 };
 
