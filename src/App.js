@@ -1,3 +1,5 @@
+import ReactDetails from "./Components/ReactDetails";
+import UseStateDetails from "./Components/UseStateDetails";
 import Vegitables from "./Components/Vegitables/Vegitables";
 
 function App() {
@@ -7,6 +9,8 @@ function App() {
         <h3>Select Healthy Vegitable</h3>
       </header>
       <Vegitables />
+      <ReactDetails />
+      <UseStateDetails />
     </div>
   );
 }
